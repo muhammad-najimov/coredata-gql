@@ -28,6 +28,9 @@ const users = [
 ;(async () => {
 	const server = new ApolloServer({
 		typeDefs, resolvers,
+		engine: {
+			apiKey: "service:coredata-gql-demo:MhAumMuYEAJF2F-4WhsaJA",
+		},
 	})
 	const { url } = await server.listen({ port: process.env.PORT || 4000, })
 	console.log(`Server ready at ${ url }`)
